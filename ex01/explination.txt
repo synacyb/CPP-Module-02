@@ -1,0 +1,23 @@
+
+in this ex we take new concepts about how we can use new and delete for alocate the arr of zombie and how we can set echt one of this 
+also hw we can delete all zombie live by using delete one time ! 
+
+so look this ! 
+
+we have a class :
+
+class zombie{
+
+    private :
+        std::string name;
+    publec :
+        zombie();
+        void annance(void);
+        void set_name(std::string name);
+        ~zombie();
+}
+
+look we add a defult contractor but we dont write anyting insid it so we can remove it cus we take a name of object and set it by set name !!! 
+set_name is muber function that help us to access to the name of private artibuate ! 
+and ~ zombie is called when we free the our alocation in the heap ! and set inside it the annce that help us  to know if the object is freed !
+
