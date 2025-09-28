@@ -7,5 +7,8 @@ Zombie::~Zombie() {
 }
 
 void    Zombie::announce(void){
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    if(name == "Foo")
+        std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    else
+        std::cout << "<"<< name << ">" << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
