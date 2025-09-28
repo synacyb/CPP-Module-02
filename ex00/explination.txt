@@ -1,0 +1,133 @@
+in this exercice we just learn How to define a class in C++ :
+
+private attributes : as we know the private attributes we can't access in the outside of the class !!
+
+constructor : we have to type of this defulte constructor and constractor overloading ! i want explaine it by do and exaple ! 
+
+destructor : as we know the destructor is a tool that we help for free the memory of the class (attributes , member func ...) it called aoutomaticly just if we creat it in the stack
+             but if we creat it in the heap memory this destructor is not called when we delete the our alocation of this class then this it called ! 
+             so the role is when creat a class in the stack the destructor is called but if we creat it in the  heap the destructor is not called when we deleteour allocation !
+
+member functions : this member function is help us to creat a flaxbel space for our user for exaple we have a data that we don't wnat to share it we aothers we can create
+                   a mumbers function that help the users to access just a data that we allowed inside this mumber func !
+
+explaine :
+
+1️⃣ Private attributes
+
+Private means the attribute cannot be accessed directly from outside the class.
+
+You can only access it through member functions (getters/setters) if you allow it.
+
+class Example {
+private:
+    int secret;
+
+public:
+    Example(int s) : secret(s) {}
+    int getSecret() { return secret; }  // controlled access
+};
+
+int main() {
+    Example e(42);
+    // std::cout << e.secret; // ❌ Error! secret is private
+    std::cout << e.getSecret(); // ✅ Correct
+}
+
+2️⃣ Constructors
+
+There are two main types:
+
+Default constructor (no parameters)
+
+class Example {
+public:
+    Example() {
+        std::cout << "Default constructor called\n";
+    }
+};
+
+
+Parameterized constructor (constructor overloading)
+
+class Example {
+private:
+    int value;
+public:
+    Example(int v) : value(v) {
+        std::cout << "Parameterized constructor called with " << value << "\n";
+    }
+};
+
+
+Constructor overloading means a class can have multiple constructors with different parameters:
+
+class Example {
+private:
+    int value;
+public:
+    Example() : value(0) {}
+    Example(int v) : value(v) {}
+};
+
+
+Now you can create:
+
+Example e1;       // uses default constructor
+Example e2(42);   // uses parameterized constructor
+
+3️⃣ Destructor
+
+Destructor is called automatically for stack objects when they go out of scope.
+
+For heap objects, you must delete them, then the destructor runs.
+
+class Example {
+public:
+    ~Example() {
+        std::cout << "Destructor called\n";
+    }
+};
+
+int main() {
+    Example e;           // stack object → destructor called automatically at end of scope
+    Example* p = new Example();  // heap object → destructor called only when we delete p
+    delete p;            // manually destroy and call destructor
+}
+
+
+✅ Important: Destructor does not free the pointer itself; delete does that.
+
+4️⃣ Member functions
+
+They let you control access to private data or perform actions on your object.
+
+class Example {
+private:
+    int secret;
+
+public:
+    Example(int s) : secret(s) {}
+
+    void announce() {
+        std::cout << "My secret is " << secret << "\n";
+    }
+};
+
+int main() {
+    Example e(42);
+    e.announce(); // user can see secret, but can't access secret directly
+}
+
+
+Think of member functions as a controlled interface to your class.
+
+✅ Summary
+
+Private attributes: hide data.
+
+Constructors: initialize objects; overloading gives flexibility.
+
+Destructor: clean up memory; automatic for stack, manual for heap.
+
+Member functions: provide controlled access to class data.
