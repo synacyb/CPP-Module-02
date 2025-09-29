@@ -7,10 +7,7 @@ Zombie::~Zombie() {
 }
 
 void    Zombie::announce(void){
-    if(name == "Foo")
         std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-    else
-        std::cout << "<"<< name << ">" << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void    Zombie::set_name(std::string name_object){
