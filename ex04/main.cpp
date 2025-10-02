@@ -9,6 +9,7 @@ void    serch_replace(std::ifstream& read, std::ofstream& write, std::string& st
     size_t index = 0;
     while (getline(read, line))
     {
+        line += "\n";
         pos = 0;
         index = line.find(str1, pos);
         while (index != std::string::npos)
@@ -19,7 +20,7 @@ void    serch_replace(std::ifstream& read, std::ofstream& write, std::string& st
             index = line.find(str1, pos);
         }
         
-        write << line << std::endl;
+        write << line;
     }
     return ;
 }
