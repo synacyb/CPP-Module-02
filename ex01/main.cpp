@@ -43,6 +43,5 @@ int main() {
     //     horde5[i].announce();
     // }
     // delete[] horde5;
-
     return 0;
 }
