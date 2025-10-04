@@ -6,9 +6,9 @@ int main() {
     int N1 = 3;
     Zombie* horde1 = zombieHorde(N1, "Zombie");
     for (int i = 0; i < N1; i++) {
-        horde1[i].announce(); // all should say "Zombie: BraiiiiiiinnnzzzZ..."
+        horde1[i].announce();
     }
-    delete[] horde1; // free memory
+    delete[] horde1;
 
     std::cout << "\n=== Test 2: Larger horde, same name ===" << std::endl;
     int N2 = 5;
@@ -35,14 +35,14 @@ int main() {
         delete[] horde4;
     }
 
-    std::cout << "\n=== Test 5: Unique names (optional) ===" << std::endl;
-    int N5 = 4;
-    Zombie* horde5 = zombieHorde(N5, "Zombie");
-    for (int i = 0; i < N5; i++) {
-        horde5[i].set_name("Zombie" + std::to_string(i + 1)); // set unique names
-        horde5[i].announce();
-    }
-    delete[] horde5;
+    // std::cout << "\n=== Test 5: Unique names (optional) ===" << std::endl;
+    // int N5 = 4;
+    // Zombie* horde5 = zombieHorde(N5, "Zombie");
+    // for (int i = 0; i < N5; i++) {
+    //     horde5[i].set_name("Zombie" + std::to_string(i + 1)); // set unique names
+    //     horde5[i].announce();
+    // }
+    // delete[] horde5;
 
     return 0;
 }
