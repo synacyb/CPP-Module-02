@@ -40,16 +40,15 @@ void    Harl::complain(std::string level){
     switch (index)
     {
         case 0:
-            (this->*print_msg[index])();
+            (this->*print_msg[0])();
         case 1:
-            (this->*print_msg[index])();
+            (this->*print_msg[1])();
         case 2:
-            (this->*print_msg[index])();
+            (this->*print_msg[2])();
         case 3:
-            (this->*print_msg[index])();
+            (this->*print_msg[3])();
+            break ;
         default:
-            break;
+            std::cout << "Unknown complaint level: " << level << std::endl;
     }
-    
-    std::cout << "Unknown complaint level: " << level << std::endl;
 }
