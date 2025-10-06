@@ -37,6 +37,7 @@ int main(int ac, char **av)
     std::string s2 = av[3];
     std::ifstream read_file;
     std::ofstream outFile;
+    std::string fileName(av[1]);
 
     if (s1.empty()) {
         std::cerr << "Error: s1 cannot be empty\n";
@@ -47,8 +48,7 @@ int main(int ac, char **av)
         std::cerr << "Error: Unable to open file av[1]" << std::endl;
         return 1;
     }
-
-    outFile.open(std::string(av[1]).append(".replace").c_str());
+    outFile.open(fileName.append(".replace").c_str());
     if (!outFile){
         std::cerr << "Error: Cannot open or creat the output file" << std::endl;
         read_file.close();
