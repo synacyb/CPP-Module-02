@@ -6,4 +6,3 @@ int main(){
     obj.complain("INFO");
     return 0;
 }
-
